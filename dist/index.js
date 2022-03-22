@@ -12273,7 +12273,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 const bouhekiPath = "/usr/local/bin/bouheki";
-const bouhekiConfigPath = external_path_.join(__dirname, "hardening-github-actions.yaml");
+const bouhekiConfigPath = external_path_.join("/tmp/", "hardening-github-actions.yaml");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (process.platform !== "linux") {
@@ -12302,9 +12302,7 @@ const bouhekiConfigPath = external_path_.join(__dirname, "hardening-github-actio
         let cmd = "cp", args = [external_path_.join(extractPath, "bouheki"), bouhekiPath];
         external_child_process_.execFileSync(cmd, args);
         external_child_process_.execSync(`chmod +x ${bouhekiPath}`);
-        external_child_process_.spawn("bouheki", ["--config", bouhekiConfigPath, "&"], {
-            detached: true,
-        });
+        // child_process.exec(`bouheki --config ${bouhekiConfigPath} &`)
     }
     catch (error) {
         core.setFailed(error.message);
