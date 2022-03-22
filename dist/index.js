@@ -12273,7 +12273,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 const bouhekiPath = "/usr/local/bin/bouheki";
-const bouhekiConfigPath = external_path_.join("/etc/", "hardening-github-actions.yaml");
+const bouhekiConfigPath = external_path_.join("/etc/", "bouheki.yaml");
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
         if (process.platform !== "linux") {
