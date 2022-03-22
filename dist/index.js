@@ -12302,7 +12302,7 @@ const bouhekiConfigPath = external_path_.join(__dirname, "hardening-github-actio
         let cmd = "cp", args = [external_path_.join(extractPath, "bouheki"), bouhekiPath];
         external_child_process_.execFileSync(cmd, args);
         external_child_process_.execSync(`chmod +x ${bouhekiPath}`);
-        external_child_process_.spawn("bouheki", ["--config", bouhekiConfigPath], {
+        external_child_process_.spawn("bouheki", ["--config", bouhekiConfigPath, "&"], {
             detached: true,
         });
     }

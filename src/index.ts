@@ -48,7 +48,7 @@ const bouhekiConfigPath = path.join(__dirname, "hardening-github-actions.yaml");
     child_process.execFileSync(cmd, args);
     child_process.execSync(`chmod +x ${bouhekiPath}`);
 
-    child_process.spawn("bouheki", ["--config", bouhekiConfigPath], {
+    child_process.spawn("bouheki", ["--config", bouhekiConfigPath, "&"], {
       detached: true,
     });
   } catch (error: any) {
