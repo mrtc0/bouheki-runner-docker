@@ -5,7 +5,7 @@ import * as child_process from "child_process";
 import { BouhekiConfigBuilder } from "./bouheki";
 
 const bouhekiPath = "/usr/local/bin/bouheki";
-const bouhekiConfigPath = path.join("/tmp/", "hardening-github-actions.yaml");
+const bouhekiConfigPath = path.join("/etc/", "hardening-github-actions.yaml");
 
 (async () => {
   try {
