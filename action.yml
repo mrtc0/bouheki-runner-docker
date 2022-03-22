@@ -1,0 +1,24 @@
+name: "bouheki runner for docker container base jobs"
+description: "Security Monitoring for GitHub Actions Self-hosted runner"
+inputs:
+  allowed-endpoints:
+    description: "Allowed description domains or IP addresses"
+    default: ""
+    required: false
+  mode:
+    description: "Block for outbound traffic, can be either monitor or block."
+    required: true
+    default: "block"
+  target:
+    description: "Restrict target, can be either container or host."
+    required: true
+    default: "container"
+  service_action:
+    description: "bouheki's systemd unit action, can be either start or stop"
+    required: true
+branding:
+  icon: "shield"
+  color: "green"
+runs:
+  using: "node16"
+  main: "dist/index.js"
